@@ -1,0 +1,7 @@
+C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\bin\Debug\Word Frequency Finder.exe
+C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\bin\Debug\Word Frequency Finder.pdb
+C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\obj\Debug\FrequenceFinder.Form1.resources
+C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\obj\Debug\WordFrequencyFinder.Properties.Resources.resources
+C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\obj\Debug\FrequenceFinder.csproj.GenerateResource.Cache
+C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\obj\Debug\Word Frequency Finder.exe
+C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\obj\Debug\Word Frequency Finder.pdb
