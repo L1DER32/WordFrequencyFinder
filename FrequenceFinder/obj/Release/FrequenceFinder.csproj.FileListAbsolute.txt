@@ -5,3 +5,4 @@ C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\obj\Release\WordFrequency
 C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\obj\Release\FrequenceFinder.csproj.GenerateResource.Cache
 C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\obj\Release\Word Frequency Finder.exe
 C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\obj\Release\Word Frequency Finder.pdb
+C:\Users\GT-PC\Dropbox\FrequenceFinder\FrequenceFinder\obj\Release\FrequenceFinder.csprojResolveAssemblyReference.cache

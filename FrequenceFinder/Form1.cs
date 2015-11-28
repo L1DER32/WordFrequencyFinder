@@ -107,7 +107,7 @@ namespace FrequenceFinder
 
 
             }
-            else MessageBox.Show("There is no textin the field.", "Word Frequency Finder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else MessageBox.Show("There is no text in the field.", "Word Frequency Finder", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -124,7 +124,7 @@ namespace FrequenceFinder
                     List<string> frequencies = new List<string>();
 
                     //adding some commentaries
-                    frequencies.Add("# Compiled with Word Frequency Finder at" + DateTime.Now.ToString("H:mm dd/mm/yyyy"));
+                    frequencies.Add("# Compiled with Word Frequency Finder at " + DateTime.Now.ToString("H:mm dd/mm/yyyy"));
                     frequencies.Add("# Total word count: " + allWords.Length);
                     frequencies.Add(string.Format("{0,-18} {1,-10} {2}", "WORD", "COUNT", "FREQUENCY"));
 
@@ -153,9 +153,11 @@ namespace FrequenceFinder
                 //preparing the text for getting better results
                 allWords = RemovePunctuationNSplit(InputBox.Text);
 
-                // if the word is the one we are looking for -- increase its count number
+                // if the word is the one we are looking for -- increase its count indicator
                 for (int i = 0; i < allWords.Length; i++)
                 {
+                    if (checkIgnoreCase.Checked) textBox_word.Text = textBox_word.Text.ToLower();
+                        
                     if (allWords[i] == textBox_word.Text) wordCount++;
                 }
 
@@ -172,25 +174,26 @@ namespace FrequenceFinder
 
         private string[] RemovePunctuationNSplit(string text)
         {
-            //one way to ignore upercase is to make everything lovercase
-            string temp = text.ToLower();
+            //one way to ignore upercase is to make everything lowercase
+            if (checkIgnoreCase.Checked) text = text.ToLower();
 
             //getting rid of punctuation
-            for (int i = 0; i < temp.Length; i++)
+            if (checkBoxIgnorePunct.Checked)
             {
-                if (temp[i] == '’' || temp[i] == '\'')
+                for (int i = 0; i < text.Length; i++)
                 {
-                    //keeping apostrophe sign
-                }
-                else if (char.IsPunctuation(temp[i]) || temp[i] == '\"')
-                {
-                    //one way to avoid messing with the length of the
-                    //array is to replace everything with whitespaces
-                    //and split method will take care of them 
-                    temp = temp.Replace(temp[i], ' ');
+                    if (text[i] == '’' || text[i] == '\'')
+                    {
+                        //keeping apostrophe sign
+                    }
+                    else if (char.IsPunctuation(text[i]) || text[i] == '\"')
+                    {
+                        text = text.Remove(i, 1);
+                        i--;//to avoid messing up with the length as we removed one character
+                    }
                 }
             }
-            return temp.Split(new string[] { "\n", " " }, StringSplitOptions.RemoveEmptyEntries);
+            return text.Split(new string[] { "\n", " " }, StringSplitOptions.RemoveEmptyEntries);
         }
 
         //based on the MSDN manual on how to sort a listview column
